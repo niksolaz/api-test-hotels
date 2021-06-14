@@ -1,0 +1,200 @@
+######################################
+# USERS                       
+######################################
+###### all users
+GET http://localhost:3030/users
+
+################################
+###### one users
+GET http://localhost:3030/users/0
+
+################################
+###### add users
+POST http://localhost:3030/users
+
+Content-Type: application/json
+
+{
+    "firstname": "Mario",
+    "lastname": "Rossi",
+     "email": "mario@test.com",
+    "bookmarks": null
+}
+################################
+
+################################
+###### update users
+PUT http://localhost:3030/users/0
+
+Content-Type: application/json
+
+{
+    "firstname": "Piero",
+    "lastname": "Rossi",
+    "email": "pierorossi@test.com",
+    "bookmarks": null
+}
+################################
+###### delete users
+DELETE http://localhost:3030/users/0
+
+######################################
+# USERS BOOKMARKS                      
+######################################
+###### all bookmarks
+GET http://localhost:3030/users/0/bookmarks
+
+################################
+###### one bookmarks
+GET http://localhost:3030/users/0/bookmarks/0
+
+################################
+###### add bookmarks
+POST http://localhost:3030/users/0/bookmarks
+
+Content-Type: application/json
+
+{
+    "is_visible": true,
+    "hotels_id": 1
+}
+################################
+
+######################################
+# HOTELS                       
+######################################
+###### all hotels
+GET http://localhost:3030/hotels
+
+######################################
+###### one hotels
+GET http://localhost:3030/hotels/0
+
+######################################
+###### add hotels
+POST http://localhost:3030/hotels
+
+Content-Type: application/json
+
+{
+    "name": "Versilia Hotels",
+    "reviews": [],
+    "menus": []
+}
+
+######################################
+###### update hotel
+PUT http://localhost:3030/hotels/0
+
+Content-Type: application/json
+
+{
+    "name": "Gabice Restaurant",
+    "reviews": [],
+    "menus": []
+}
+######################################
+###### delete hotel
+DELETE http://localhost:3030/hotels/0
+
+######################################
+
+######################################
+# REVIEWS                       
+######################################
+###### All reviews
+GET http://localhost:3030/hotels/0/reviews
+
+######################################
+###### One review
+GET http://localhost:3030/hotels/0/reviews/0
+
+######################################
+###### Add review
+POST http://localhost:3030/hotels/0/reviews
+
+Content-Type: application/json
+
+{
+    "hotels_id": 0,
+    "users_id": 0,
+    "message": "Add New Lorem ipsum bla bla bla ...."
+}
+
+######################################
+###### Update review
+PUT http://localhost:3030/hotels/0/reviews/0
+
+Content-Type: application/json
+
+{
+    "hotels_id": 0,
+    "users_id": 0,
+    "message": "Updated Lorem ipsum bla bla bla ...."
+}
+######################################
+###### delete review
+DELETE http://localhost:3030/hotels/0/reviews/0
+
+######################################
+
+######################################
+# MENUS                       
+######################################
+###### All menus
+GET http://localhost:3030/hotels/0/menus
+
+######################################
+###### One menus
+GET http://localhost:3030/hotels/0/menus/0
+
+######################################
+###### Add menus
+POST http://localhost:3030/hotels/0/menus
+
+Content-Type: application/json
+
+{
+    "description": "riso, patate e cozze",
+    "price": 35
+}
+
+######################################
+###### Update menus
+PUT http://localhost:3030/hotels/0/menus/0
+
+Content-Type: application/json
+
+{
+    "description": "trofie, pesto, patate e fagiolini",
+    "price": 25
+}
+######################################
+###### delete menus
+DELETE http://localhost:3030/hotels/0/menus/0
+
+######################################
+
+######################################
+# TRANSACTIONS                       
+######################################
+###### all transactions
+GET http://localhost:3030/transactions
+
+######################################
+###### one transaction
+GET http://localhost:3030/transactions/0
+
+######################################
+###### add transaction
+POST http://localhost:3030/transactions
+
+Content-Type: application/json
+
+{
+    "hotel": "Palace hotels",
+    "user": "Mario Rossi",
+    "amount": 100,
+    "payment_type": "credit card",
+    "status": "pending"
+}
