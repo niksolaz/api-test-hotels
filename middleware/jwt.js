@@ -16,14 +16,14 @@ let setToken = (id, username) => {
         username: username
     };
     let chiavePrivata = fs.readFileSync(__dirname + '/rsa.key');
-    var token = jwt.sign(payload, chiavePrivata, options)
+    var token = jwt.sign(payload, chiavePrivata, options);
     return token;
 }
 
 
 let checkToken = (token) => {
     let chiavePubblica = fs.readFileSync(__dirname + '/rsa.pem');
-    jwt.verify(token, chiavePubblica, options)
+    jwt.verify(token, chiavePubblica, options);
 }
 
 module.exports = {

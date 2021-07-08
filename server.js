@@ -12,11 +12,12 @@ const usersRoutes = require('./routes/users');
 const hotelsRoutes = require('./routes/hotels');
 const bookingsRoutes = require('./routes/bookings');
 const transactionsRoutes = require('./routes/transactions');
+var engines = require('consolidate');
+
 
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
-
 require('dotenv').config();
 const port = process.env.HTTP_PORT || 3000;
 
@@ -36,7 +37,7 @@ app.use('/transactions', [mid.checkOut], transactionsRoutes);
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/', [mid.checkOut], (req, res) => {
-    res.sendFile('index.html', { root: app.get('views') })
+    res.sendFile('index.html', { root: app.get('views') });
 });
 
 
