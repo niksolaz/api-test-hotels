@@ -14,7 +14,9 @@ const bookingsRoutes = require('./routes/bookings');
 const transactionsRoutes = require('./routes/transactions');
 var engines = require('consolidate');
 
-
+const printName = () => {
+    return "NikSolaz";
+}
 
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -46,5 +48,6 @@ app.get('/', [mid.checkOut], (req, res) => {
 
 
 app.listen(port, () => {
+    console.log(printName());
     console.log(`Connection on ${connectingServerAt}`);
 })
