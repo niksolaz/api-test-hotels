@@ -48,6 +48,6 @@ app.get('/', [mid.checkOut], (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(printName());
+    console.log(printName("Niksolaz"));
     console.log(`Connection on ${connectingServerAt}`);
 })
