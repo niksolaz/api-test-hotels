@@ -19,7 +19,11 @@ var engines = require('consolidate');
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 require('dotenv').config();
+
+const pathServer = process.env.HTTP_PATH;
 const port = process.env.HTTP_PORT || 3000;
+const connectingServerAt = pathServer + ":" + port;
+console.log(connectingServerAt);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -42,6 +46,5 @@ app.get('/', [mid.checkOut], (req, res) => {
 
 
 app.listen(port, () => {
-    const pathServer = "http://localhost:" 
-    console.log(`Connection on ${pathServer}${port}`);
+    console.log(`Connection on ${connectingServerAt}`);
 })
