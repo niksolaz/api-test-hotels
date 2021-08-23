@@ -14,8 +14,8 @@ const bookingsRoutes = require('./routes/bookings');
 const transactionsRoutes = require('./routes/transactions');
 var engines = require('consolidate');
 
-const printName = () => {
-    return "NikSolaz";
+const printName = (name) => {
+    return name;
 }
 
 var jsonParser = bodyParser.json()
