@@ -106,3 +106,7 @@ dist
 # Certificate
 *.key
 *.pem
+
+# Key
+is_rsa2
+is_rsa2.pub
