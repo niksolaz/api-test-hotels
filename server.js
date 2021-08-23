@@ -42,5 +42,6 @@ app.get('/', [mid.checkOut], (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Connection on http://localhost:${port}`);
+    const pathServer = "http://localhost:" 
+    console.log(`Connection on ${pathServer}${port}`);
 })
